@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BandDetailComponent } from './band-detail.component';
+import { BandEditComponent } from './band-edit.component';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -10,7 +11,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
-    BandDetailComponent
+    BandDetailComponent,
+    BandEditComponent
   ],
   imports: [
     NgbModule,
