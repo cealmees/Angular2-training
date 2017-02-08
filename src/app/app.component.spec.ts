@@ -16,6 +16,7 @@ describe('AppComponent', () => {
   it('should create the app', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
+    console.log("Aiudaaaa");
     expect(app).toBeTruthy();
   }));
 
@@ -29,6 +30,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('app works!');
+    expect(compiled.querySelector('h1').textContent).toContain('Entonces esto es como un FindDocument();');
   }));
 });
