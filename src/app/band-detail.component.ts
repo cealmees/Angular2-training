@@ -8,7 +8,7 @@ import { BandEditComponent } from './band-edit.component';
     selector: 'my-band-detail',
     template: `
         <div *ngIf="band">
-            <img src="{{band.image}}" style="width:304px;height:228px;"/>
+            <img src="{{band.image}}" style="width:25%;height:25%;"/>
             <h2>{{band.name}}</h2>
             <div><label>Genre: </label>{{band.genre}}</div>
             <div><label>Members: </label> {{band.members}}</div>
