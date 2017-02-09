@@ -12,6 +12,7 @@ import { BandsComponent } from './bands.component';
   template: `
     <h1>Music</h1>
         <my-bands></my-bands>
+        <router-outlet></router-outlet>
   `
   // templateUrl: './app.component.html',
   // styleUrls: ['./app.component.css']

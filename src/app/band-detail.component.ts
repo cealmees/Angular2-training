@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
@@ -23,8 +23,8 @@ import { BandsService } from './bands.service';
     `
 })
 
-export class BandDetailComponent implements OnInit {
-    band: Band;
+export class BandDetailComponent {
+    public band: Band;
     public currentBand: Band;
 
     constructor(
@@ -33,7 +33,13 @@ export class BandDetailComponent implements OnInit {
         private location: Location
     ) {}
     ngOnInit(): void {
-        this.route.params.switchMap((params: Params) => this.bandsService.getBand(+params['id'])).subscribe(band => this.band = band);
+        this.route.params.switchMap((params: EcdsaParams) => this.bandsService.getBand(+params['id'])).subscribe(band => this.band = band);
+        // {
+        //     if (params['id'] != null) {
+        //         console.log(this.bandsService.getBand(+params['id']));
+        //     }
+        // });
+        // this.route.params.switchMap((params: Params) => this.bandsService.getBand(+params['id'])).subscribe(band => this.band = band);
     }
     goBack(): void {
     this.location.back();

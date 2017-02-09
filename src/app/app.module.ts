@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BandsComponent } from './bands.component';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { routing, appRoutingProviders } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -22,10 +23,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    routing,
     MaterialModule.forRoot(),
     HttpModule
   ],
-  providers: [],
+  providers: [appRoutingProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
