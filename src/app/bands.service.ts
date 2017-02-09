@@ -8,6 +8,10 @@ export class BandsService {
     getBands(): Promise<Band[]> {
         return Promise.resolve(BANDS);
     }
+    getBand(id: number): Promise<Band> {
+        console.log('Deberías de mostrar esto, basura. ' + id);
+        return this.getBands().then(bands => bands.find(band => band.id === id));
+    }
     getLaggedBands(): Promise<Band[]> {
         return new Promise<Band[]>(resolve => 
             setTimeout(() => resolve(BANDS), 300)
