@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { BandsService } from './bands.service';
+
 
 import { Band } from './band';
 
@@ -20,10 +22,25 @@ import { Band } from './band';
                 <label>Albums: </label>
                 <div><input [(ngModel)]="band.albums" placeholder="albums"></div>
             </div>
+            <button type="button" (click)="onSelect(band)" >Save</button>
         </div>
     `
 })
 
+// export class BandEditComponent {
+//     public band: Band;
+//     public editedBandProperties: Band;
+//     onSelect(band: Band): void { this.editedBandProperties = band; }
+
+// }
 export class BandEditComponent {
-    public band: Band;
+  public band: Band;
+  public selectedBand: Band;
+
+  constructor(private service: BandsService) {}
+  onSelect(b: Band): void { this.selectedBand = b; this.editBand(); }
+  editBand(): void {
+      console.log(this.selectedBand);
+    this.service.editBand(this.selectedBand);
+  }
 }

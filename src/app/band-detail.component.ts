@@ -1,14 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import 'rxjs/add/operator/switchMap';
 
 import { Band } from './band';
 import { BandEditComponent } from './band-edit.component';
+import { BandsService } from './bands.service';
 
 @Component({
     inputs: ['band'],
     selector: 'my-band-detail',
     template: `
         <div *ngIf="band">
-            <img src="{{band.image}}" style="width:304px;height:228px;"/>
+            <img src="{{band.image}}" style="width:25%;height:25%;"/>
             <h2>{{band.name}}</h2>
             <div><label>Genre: </label>{{band.genre}}</div>
             <div><label>Members: </label> {{band.members}}</div>
@@ -22,5 +26,23 @@ import { BandEditComponent } from './band-edit.component';
 export class BandDetailComponent {
     public band: Band;
     public currentBand: Band;
+
+    constructor(
+        private bandsService: BandsService,
+        private route: ActivatedRoute,
+        private location: Location
+    ) {}
+    ngOnInit(): void {
+        this.route.params.switchMap((params: EcdsaParams) => this.bandsService.getBand(+params['id'])).subscribe(band => this.band = band);
+        // {
+        //     if (params['id'] != null) {
+        //         console.log(this.bandsService.getBand(+params['id']));
+        //     }
+        // });
+        // this.route.params.switchMap((params: Params) => this.bandsService.getBand(+params['id'])).subscribe(band => this.band = band);
+    }
+    goBack(): void {
+    this.location.back();
+    }
     onSelect(band: Band): void { this.currentBand = band; }
 }
