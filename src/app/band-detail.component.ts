@@ -33,7 +33,7 @@ export class BandDetailComponent implements OnInit {
         private location: Location
     ) {}
     ngOnInit(): void {
-    this.route.params.switchMap((params: Params) => this.bandsService.getBand(+params['id'])).subscribe(band => this.band = band);
+        this.route.params.switchMap((params: Params) => this.bandsService.getBand(+params['id'])).subscribe(band => this.band = band);
     }
     goBack(): void {
     this.location.back();
