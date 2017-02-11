@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Band } from './band';
-import { BandsService } from './bands.service';
+import { Band } from 'app/entities/band-entities/band';
+import { BandsService } from 'app/entities/band-entities/band-services/bands.service';
 
 @Component({
   providers: [BandsService],

@@ -1,6 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
-import { BandDetailComponent } from './band-detail.component';
-import { BandsComponent } from './bands.component';
+import { BandDetailComponent } from 'app/entities/band-entities/show-band/band-detail.component';
+import { BandsComponent } from 'app/entities/band-entities/show-bands/bands.component';
 import { NewBandComponent } from './newBand.component';
 
 const appRoutes: Routes = [

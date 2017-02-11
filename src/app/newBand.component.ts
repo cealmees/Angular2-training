@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { BandsService } from './bands.service';
+import { BandsService } from 'app/entities/band-entities/band-services/bands.service';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { Band } from './band';
+import { Band } from 'app/entities/band-entities/band';
 
 @Component({
     selector: 'new-band',

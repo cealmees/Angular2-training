@@ -2,15 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { BandDetailComponent } from './band-detail.component';
-import { BandEditComponent } from './band-edit.component';
+import { BandDetailComponent } from 'app/entities/band-entities/show-band/band-detail.component';
+import { BandEditComponent } from 'app/entities/band-entities/edit-band/band-edit.component';
 import { MaterialModule } from '@angular/material';
-import { AppRoutingModule } from './app-routing.module';
-import { BandsComponent } from './bands.component';
+import { BandsComponent } from 'app/entities/band-entities/show-bands/bands.component';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { routing, appRoutingProviders } from './app.routing';
-import { NavButtons } from './navButtons.component';
+import { NavButtons } from 'app/entities/Navigation/navButtons.component';
 import { TabsModule } from 'ng2-bootstrap/tabs';
 import { NewBandComponent } from './newBand.component';
 
@@ -30,7 +29,6 @@ import { NewBandComponent } from './newBand.component';
     NgbModule,
     BrowserModule,
     TabsModule.forRoot(),
-    AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
     routing,
