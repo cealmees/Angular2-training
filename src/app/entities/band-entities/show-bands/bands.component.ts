@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 
-import { Band } from './Band';
-import { BandsService } from './bands.service';
+import { Band } from 'app/entities/band-entities/band';
+import { BandsService } from 'app/entities/band-entities/band-services/bands.service';
 
 @Component({
 //   moduleId: module.id,
@@ -28,11 +28,10 @@ export class BandsComponent implements OnInit {
         private bandsService: BandsService
     ) {}
     getBands(): void {
-        this.bandsService.getBands().then(bands => this.bands = bands);
+        this.bandsService.getBands().subscribe(bandsFromHttp => this.bands = bandsFromHttp);
     }
     ngOnInit(): void {
         this.getBands();
     }
     onSelect(band: Band): void { this.selectedBand = band; this.router.navigate(['/band/' + this.selectedBand.id]);  }
-
 }

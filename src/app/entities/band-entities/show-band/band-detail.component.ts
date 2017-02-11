@@ -3,9 +3,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
-import { Band } from './band';
-import { BandEditComponent } from './band-edit.component';
-import { BandsService } from './bands.service';
+import { Band } from 'app/entities/band-entities/band';
+import { BandEditComponent } from 'app/entities/band-entities/edit-band/band-edit.component';
+import { BandsService } from 'app/entities/band-entities/band-services/bands.service';
 
 @Component({
     inputs: ['band'],
