@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 import { Band } from './Band';
 import { BandsService } from './bands.service';
@@ -15,11 +16,10 @@ import { BandsService } from './bands.service';
                 <span class="badge">{{b.id}}</span> {{b.name}}
             </li>
         </ul>
-        <my-band-detail [band]="selectedBand"></my-band-detail>
   `
 })
 
-export class BandsComponent implements OnInit{
+export class BandsComponent implements OnInit {
     bands: Band[];
     selectedBand: Band;
 
@@ -33,9 +33,6 @@ export class BandsComponent implements OnInit{
     ngOnInit(): void {
         this.getBands();
     }
-    onSelect(band: Band): void { this.selectedBand = band; }
-    gotoDetail(): void {
-        console.log(this.selectedBand.id);
-        this.router.navigate(['/detail', this.selectedBand.id]);
-  }
+    onSelect(band: Band): void { this.selectedBand = band; this.router.navigate(['/band/' + this.selectedBand.id]);  }
+
 }
