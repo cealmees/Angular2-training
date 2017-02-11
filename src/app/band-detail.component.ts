@@ -15,8 +15,11 @@ import { BandsService } from './bands.service';
             <img src="{{band.image}}" style="width:25%;height:25%;"/>
             <h2>{{band.name}}</h2>
             <div><label>Genre: </label>{{band.genre}}</div>
-            <div><label>Members: </label> {{band.members}}</div>
-            <div><label>Albums: </label> {{band.albums}}</div>
+            <div><label>Members: </label>                
+            <li *ngFor="let m of band.members">{{m}}</li></div>
+            <div><label>Albums: </label>
+                <li *ngFor="let a of band.albums">{{a}}</li>
+            </div>
             <button type="button" (click)="onSelect(band)" >Edit</button>
             <my-band-edit [band]="currentBand"></my-band-edit>
         </div>
@@ -33,13 +36,7 @@ export class BandDetailComponent {
         private location: Location
     ) {}
     ngOnInit(): void {
-        this.route.params.switchMap((params: EcdsaParams) => this.bandsService.getBand(+params['id'])).subscribe(band => this.band = band);
-        // {
-        //     if (params['id'] != null) {
-        //         console.log(this.bandsService.getBand(+params['id']));
-        //     }
-        // });
-        // this.route.params.switchMap((params: Params) => this.bandsService.getBand(+params['id'])).subscribe(band => this.band = band);
+        this.route.params.switchMap((params: Band) => this.bandsService.getBand(+params['id'])).subscribe(band => this.band = band);
     }
     goBack(): void {
     this.location.back();

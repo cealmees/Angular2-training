@@ -26,6 +26,10 @@ export class BandsService {
             console.log(BANDS);
         };
     }
+    newBand(band: Band) {
+        BANDS.push(band);
+        console.log(BANDS);
+    }
     private clone(object: any) {
         return JSON.parse(JSON.stringify(object));
     }
