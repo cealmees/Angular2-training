@@ -15,16 +15,14 @@ export class BandsService {
     private bandsURL = 'https://raw.githubusercontent.com/cealmees/Angular2-training/master/src/app/BANDS.json';
 
     constructor (private http: Http) {}
-   
+
     private extractData(res: Response) {
         console.log('le está pegando??');
        let body = res.json();
        console.log(body);
        return body;
-       
     }
-    
-    private handleError (error: Response | any) {
+     private handleError (error: Response | any) {
         let errMsg: string;
         if (error instanceof Response) {
             const body = error.json() || '';
