@@ -10,20 +10,7 @@ import { BandsService } from 'app/entities/band-entities/band-services/bands.ser
 @Component({
     inputs: ['band'],
     selector: 'my-band-detail',
-    template: `
-        <div *ngIf="band">
-            <img src="{{band.image}}" style="width:25%;height:25%;"/>
-            <h2>{{band.name}}</h2>
-            <div><label>Genre: </label>{{band.genre}}</div>
-            <div><label>Members: </label>                
-            <li *ngFor="let m of band.members">{{m}}</li></div>
-            <div><label>Albums: </label>
-                <li *ngFor="let a of band.albums">{{a}}</li>
-            </div>
-            <button type="button" (click)="onSelect(band)" >Edit</button>
-            <my-band-edit [band]="currentBand"></my-band-edit>
-        </div>
-    `
+    templateUrl: 'band-detail.component.html'
 })
 
 export class BandDetailComponent {

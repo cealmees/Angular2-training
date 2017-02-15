@@ -8,15 +8,7 @@ import { BandsService } from 'app/entities/band-entities/band-services/bands.ser
 @Component({
 //   moduleId: module.id,
   selector: 'my-bands',
-  template: `
-        <ul class="items">
-            <li *ngFor="let b of bands"
-                [class.selected] = "b === selectedBand"
-                (click)="onSelect(b)">
-                <span class="badge">{{b.id}}</span> {{b.name}}
-            </li>
-        </ul>
-  `
+  templateUrl: 'bands.component.html'
 })
 
 export class BandsComponent implements OnInit {
