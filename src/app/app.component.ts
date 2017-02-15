@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { Band } from 'app/entities/band-entities/band';
 import { BandsService } from 'app/entities/band-entities/band-services/bands.service';
+import { HomeComponent } from 'app/entities/login/home/index';
 
 @Component({
   providers: [BandsService],

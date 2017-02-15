@@ -54,7 +54,6 @@ import { RegisterComponent } from 'app/entities/login/register/index';
     AlertService,
     AuthenticationService,
     UserService,
-
         // providers used to create fake backend
     fakeBackendProvider,
     MockBackend,
@@ -62,4 +61,5 @@ import { RegisterComponent } from 'app/entities/login/register/index';
     ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

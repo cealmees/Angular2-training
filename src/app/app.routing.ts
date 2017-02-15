@@ -17,7 +17,7 @@ const appRoutes: Routes = [
     { path: 'band/:id', component: BandDetailComponent },
     { path: 'catalog', component: BandsComponent },
     { path: 'newBand', component: NewBandComponent },
-    { path: 'login-start', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
 
