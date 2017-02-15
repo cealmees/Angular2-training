@@ -13,7 +13,6 @@ import { NavButtons } from 'app/entities/Navigation/navButtons.component';
 import { TabsModule } from 'ng2-bootstrap/tabs';
 import { NewBandComponent } from './newBand.component';
 
-
 import { fakeBackendProvider } from 'app/entities/login/helpers/index';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions } from '@angular/http';
