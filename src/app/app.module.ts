@@ -14,6 +14,16 @@ import { TabsModule } from 'ng2-bootstrap/tabs';
 import { NewBandComponent } from './newBand.component';
 
 
+import { fakeBackendProvider } from 'app/entities/login/helpers/index';
+import { MockBackend, MockConnection } from '@angular/http/testing';
+import { BaseRequestOptions } from '@angular/http';
+
+import { AlertComponent } from 'app/entities/login/directives/index';
+import { AuthGuard } from 'app/entities/login/guards/index';
+import { AlertService, AuthenticationService, UserService } from 'app/entities/login/services/index';
+import { HomeComponent } from 'app/entities/login/home/index';
+import { LoginComponent } from 'app/entities/login/login/index';
+import { RegisterComponent } from 'app/entities/login/register/index';
 
 
 @NgModule({
@@ -21,6 +31,10 @@ import { NewBandComponent } from './newBand.component';
     AppComponent,
     BandDetailComponent,
     NavButtons,
+    AlertComponent,
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent,
     NewBandComponent,
     BandEditComponent,
     BandsComponent
@@ -35,7 +49,18 @@ import { NewBandComponent } from './newBand.component';
     MaterialModule.forRoot(),
     HttpModule
   ],
-  providers: [appRoutingProviders],
+  providers: [
+    appRoutingProviders,
+    AuthGuard,
+    AlertService,
+    AuthenticationService,
+    UserService,
+
+        // providers used to create fake backend
+    fakeBackendProvider,
+    MockBackend,
+    BaseRequestOptions
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
