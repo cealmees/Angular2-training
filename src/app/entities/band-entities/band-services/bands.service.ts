@@ -41,9 +41,8 @@ export class BandsService {
                         .map(this.extractData)
                         .catch(this.handleError);
     }
-    getBand(id: number): Promise<Band> {
-        // return this.getBands().then(bands => bands.find(band => band.id === id));
-        return null;
+    getBand(id: number): Observable<Band> {
+        return this.getBands().map(bands => bands.find(band => band.id === id));
     }
     getLaggedBands(): Promise<Band[]> {
         return new Promise<Band[]>(resolve => 
