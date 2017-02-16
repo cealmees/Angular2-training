@@ -10,7 +10,6 @@ import { HomeComponent } from 'app/entities/login/home/index';
   selector: 'app-root',
   template: `
   <nav-buttons></nav-buttons>
-    <h1>Music</h1>
     <router-outlet></router-outlet>
   `
   // templateUrl: './app.component.html',
