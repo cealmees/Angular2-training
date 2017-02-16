@@ -17,8 +17,7 @@ export class BandsService {
     constructor (private http: Http) {}
 
     private extractData(res: Response) {
-        console.log('le está pegando??');
-       let body = res.json();
+       const body = res.json();
        console.log(body);
        return body;
     }

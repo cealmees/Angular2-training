@@ -14,9 +14,9 @@ const appRoutes: Routes = [
         redirectTo: '/',
         pathMatch: 'full'
     },
-    { path: 'band/:id', component: BandDetailComponent },
-    { path: 'catalog', component: BandsComponent },
-    { path: 'newBand', component: NewBandComponent },
+    { path: 'band/:id', component: BandDetailComponent , canActivate: [AuthGuard] },
+    { path: 'catalog', component: BandsComponent, canActivate: [AuthGuard]  },
+    { path: 'newBand', component: NewBandComponent, canActivate: [AuthGuard]  },
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
